@@ -13,6 +13,7 @@ body {
   background-color: var(--rivulet-beige);
   color: var(--font-color-light-mode);
   font-family: var(--font-body);
+  margin-bottom: 2em;
 }
 
 body .dark-mode {
@@ -165,15 +166,63 @@ div.products-list {
       margin: 0 0 0 0.5em;
     }
   }
+
+  &>div.product.detail {
+    height: 19em;
+
+    &>img {
+      width: 100%;
+      height: auto;
+    }
+
+    &>div.product-price {
+      position: revert;
+      bottom: revert;
+      left: revert;
+      font-weight: bold;
+      margin: 0 0 0 0.5em;
+      float: right;
+      max-width: 50%;
+    }
+
+  }
+}
+
+main.about {
+  &>div.about-section {
+    &>div {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 1em;
+    }
+  }
+
+  &>div.business-details {
+    display: flex;
+    justify-content: space-around;
+
+  }
+
+}
+
+main.policies {
+  &>h2{
+    margin-bottom: 0.2em;
+  }
 }
 
 footer {
   display: block;
-  position: absolute;
+  position: fixed;
+  left: 0;
   bottom: 0;
   width: 100%;
-  text-align: center;
-  margin-bottom: 0.25em;
+  z-index: 100;
+  align-items: center;
+  padding-bottom: 0.25em;
+  padding-top: 0.25em;
+  background-color: var(--rivulet-beige);
 
   &>div.footer-content {
     display: flex;
