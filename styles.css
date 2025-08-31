@@ -7,6 +7,8 @@
 
   --font-color-light-mode: var(--olive-green);
   --font-color-dark-mode: var(--rivulet-beige);
+
+  --text-overhang: 1.5em;
 }
 
 body {
@@ -251,6 +253,48 @@ main.about {
 
 }
 
+main.news {
+  &>div.events {
+    &>div.event-list {
+      display: flex;
+      justify-content: space-between;
+
+      &>div.event {
+        display: block;
+        width: 45%;
+
+        &>div.date::before {
+          content: "Date: ";
+          font-weight: bold;
+        }
+
+        &>div.time::before {
+          content: "Time: ";
+          font-weight: bold;
+        }
+
+        &>div.location {
+          text-indent: calc(0em - var(--text-overhang));
+          padding-left: var(--text-overhang );
+          &::before {
+            content: "Location: ";
+            font-weight: bold;
+          }
+        }
+
+      }
+    }
+
+  }
+
+  &>div.announcements {
+    &>div.announcement {
+      &>h3 {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
 
 main.policies {
   &>h2 {
