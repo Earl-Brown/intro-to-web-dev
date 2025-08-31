@@ -260,26 +260,58 @@ main.news {
       justify-content: space-between;
 
       &>div.event {
-        display: block;
-        width: 45%;
+        border: 2px solid var(--olive-green);
+        padding-left: 0.5em;
+        background-color: var(--bark-brown);
+        color: var(--rivulet-beige);
+        max-width: 48%;
 
-        &>div.date::before {
-          content: "Date: ";
-          font-weight: bold;
-        }
+        div.event-details {
+          display: flex;
+          justify-content: flex-start;
 
-        &>div.time::before {
-          content: "Time: ";
-          font-weight: bold;
-        }
-
-        &>div.location {
-          text-indent: calc(0em - var(--text-overhang));
-          padding-left: var(--text-overhang );
-          &::before {
-            content: "Location: ";
-            font-weight: bold;
+          div.picture {
+            img {
+              width: 8em;
+              margin: 0 1em 1em 0;
+            }
           }
+
+          div {
+            h3.subject {
+              margin: 0.5em 0;
+              top: -0.2em;
+              position: relative;
+            }
+
+            &>div.date::before {
+              content: "Date: ";
+              font-weight: bold;
+            }
+
+            &>div.time::before {
+              content: "Time: ";
+              font-weight: bold;
+            }
+
+            &>div.location {
+              text-indent: calc(0em - var(--text-overhang));
+              padding-left: var(--text-overhang);
+
+              &::before {
+                content: "Location: ";
+                font-weight: bold;
+              }
+            }
+          }
+        }
+
+      }
+
+      div.event-description {
+        div.description-text {
+          margin: 0.75em 0;
+          font-size: smaller;
         }
 
       }
