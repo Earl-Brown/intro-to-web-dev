@@ -91,7 +91,7 @@ main div.page-heading {
   display: flex;
   padding: 1em;
 
-  &>img {
+  img {
     width: 10em;
     border: 0.25em ridge var(--font-color-dark-mode);
     margin: 0 1em;
@@ -125,7 +125,7 @@ div.category-list div {
 }
 
 div.specials {
-  &>h3.subtitle {
+  h3.subtitle {
     margin: 0.5em 0;
     color: var(--autumn-leaf);
   }
@@ -136,7 +136,7 @@ div.products-list {
   flex-wrap: wrap;
   justify-content: space-between;
 
-  &>div.product {
+  div.product {
     border: 2px solid var(--olive-green);
     padding: 0.25em;
     margin: 0.25em;
@@ -146,21 +146,21 @@ div.products-list {
     width: 30%;
     height: 6em;
 
-    &>img {
+    img {
       height: 50%;
       width: auto;
       float: right;
     }
 
-    &>h3.product-title {
+    h3.product-title {
       margin: 0 0.5em 0 0;
     }
 
-    &>div.product-description {
+    div.product-description {
       margin: 0.5em 0;
     }
 
-    &>div.product-price {
+    div.product-price {
       position: absolute;
       bottom: 0;
       left: 0;
@@ -169,15 +169,15 @@ div.products-list {
     }
   }
 
-  &>div.product.detail {
+  div.product.detail {
     height: 19em;
 
-    &>img {
+    img {
       width: 100%;
       height: auto;
     }
 
-    &>div.product-price {
+    div.product-price {
       position: revert;
       bottom: revert;
       left: revert;
@@ -191,8 +191,8 @@ div.products-list {
 }
 
 main.about {
-  &>div.about-section {
-    &>div {
+  div.about-section {
+    div {
       max-width: 100%;
       height: auto;
       display: block;
@@ -200,15 +200,15 @@ main.about {
     }
   }
 
-  &>div.business-details {
+  div.business-details {
     display: flex;
     justify-content: space-around;
 
-    &>div {
-      &>table.operating-hours {
-        &>tbody {
-          &>tr {
-            &>th {
+    div {
+      table.operating-hours {
+        tbody {
+          tr {
+            th {
               text-align: left;
               ;
             }
@@ -216,23 +216,23 @@ main.about {
         }
       }
 
-      &>div.map-view {
-        &>img.map {
+      div.map-view {
+        img.map {
           width: 14em;
           height: auto;
         }
       }
     }
 
-    &>div.contact-form {
-      &>form.contact-form {
-        &>div {
-          &>label {
+    div.contact-form {
+      form.contact-form {
+        div {
+          label {
             display: block;
           }
         }
 
-        &>div.form-buttons {
+        div.form-buttons {
           margin-top: 0.5em;
           display: flex;
           justify-content: space-between;
@@ -242,8 +242,8 @@ main.about {
 
     }
 
-    &>div.store-view {
-      &>img {
+    div.store-view {
+      img {
         height: 30em;
         width: auto;
       }
@@ -254,12 +254,12 @@ main.about {
 }
 
 main.news {
-  &>div.events {
-    &>div.event-list {
+  div.events {
+    div.event-list {
       display: flex;
       justify-content: space-between;
 
-      &>div.event {
+      div.event {
         border: 2px solid var(--olive-green);
         padding-left: 0.5em;
         background-color: var(--bark-brown);
@@ -284,17 +284,17 @@ main.news {
               position: relative;
             }
 
-            &>div.date::before {
+            div.date::before {
               content: "Date: ";
               font-weight: bold;
             }
 
-            &>div.time::before {
+            div.time::before {
               content: "Time: ";
               font-weight: bold;
             }
 
-            &>div.location {
+            div.location {
               text-indent: calc(0em - var(--text-overhang));
               padding-left: var(--text-overhang);
 
@@ -319,9 +319,9 @@ main.news {
 
   }
 
-  &>div.announcements {
-    &>div.announcement {
-      &>h3 {
+  div.announcements {
+    div.announcement {
+      h3 {
         margin-bottom: 0;
       }
     }
@@ -329,7 +329,7 @@ main.news {
 }
 
 main.policies {
-  &>h2 {
+  h2 {
     margin-bottom: 0.2em;
   }
 }
@@ -346,15 +346,15 @@ footer {
   padding-top: 0.25em;
   background-color: var(--rivulet-beige);
 
-  &>div.footer-content {
+  div.footer-content {
     display: flex;
     justify-content: space-between;
 
-    &>div.social-media {
+    div.social-media {
       width: auto;
       margin: 0 0.5em;
 
-      &>a.icon {
+      a.icon {
         font-size: 1.25em;
         color: var(--font-color-light-mode);
         transition: color 0.3s;
@@ -365,26 +365,26 @@ footer {
       }
     }
 
-    &>div.newsletter {}
+    div.newsletter {}
 
-    &>div.admin-links {
+    div.admin-links {
       justify-content: end;
       width: auto;
       margin: 0 0.5em;
 
-      &>ul {
+      ul {
         display: inline-block;
         padding: 0;
         margin: 0;
         list-style: none;
 
-        &>li {
+        li {
           display: inline;
           margin-right: 0.1em;
           list-style-type: none;
           font-size: small;
 
-          &>a {
+          a {
             margin: 0 1em;
             color: var(--font-color-light-mode);
             text-decoration: none;
