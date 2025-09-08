@@ -71,20 +71,32 @@ img.logo.primary {
   display: inline-block;
 }
 
-a.header-link {
-  text-decoration: none;
-  display: inline-block;
-  align-self: right;
-}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 1em;
+  background-color: var(--rivulet-beige);
+  border-bottom: 2px solid var(--olive-green);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 
-header ul {
-  list-style: none;
-}
+  a.header-link {
+    text-decoration: none;
+    display: inline-block;
+    align-self: right;
+  }
 
-header * ul li {
-  display: block;
-  margin-right: 1em;
-  list-style-type: none;
+  ul {
+    list-style: none;
+  }
+
+  ul li {
+    display: block;
+    margin-right: 1em;
+    list-style-type: none;
+  }
 }
 
 main div.page-heading {
@@ -398,5 +410,13 @@ footer {
       }
 
     }
+  }
+}
+
+
+@media (max-width: 400px) {
+  header {
+    flex-direction: column;
+    align-items: center;
   }
 }
