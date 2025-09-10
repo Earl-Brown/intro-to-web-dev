@@ -9,7 +9,7 @@
   --font-color-dark-mode: var(--rivulet-beige);
 
   --text-overhang: 1.5em;
-  
+
 }
 
 body {
@@ -18,12 +18,12 @@ body {
   font-family: var(--font-body);
   margin: 0;
 
-  @media screen and (min-width: 800px) {
-    margin: 0 calc(50% - 400px);
+  @media screen and (min-width: 1000px) {
+    margin: 0 100px;
   }
 
   @media screen and (min-width: 1400px) {
-    margin: 0 calc(50% - 600px);
+    margin: 0 300px;
   }
 }
 
@@ -184,7 +184,7 @@ main.home {
 
       .subtitle {
         margin-top: 0;
-padding-top: 0;
+        padding-top: 0;
       }
     }
 
@@ -357,6 +357,9 @@ main.about {
   div.business-details {
     display: flex;
     justify-content: space-around;
+    flex-direction: row;
+    ;
+    flex-wrap: wrap;
 
     div {
       table.operating-hours {
@@ -408,9 +411,12 @@ main.about {
 }
 
 main.news {
+  margin: 0 1em;
+
   div.events {
     div.event-list {
       display: flex;
+      flex-direction: row;
       justify-content: space-between;
 
       div.event {
@@ -469,6 +475,20 @@ main.news {
         }
 
       }
+
+      @media screen and (max-width: 750px) {
+        flex-direction: column;
+        div.event {
+          max-width: 100%;
+          margin-bottom: 1em;
+          
+        }
+      }
+
+
+
+
+
     }
 
   }
@@ -483,6 +503,8 @@ main.news {
 }
 
 main.policies {
+  margin-left: 1em;
+
   h2 {
     margin-bottom: 0.2em;
   }
@@ -492,7 +514,7 @@ footer {
   position: fixed;
   display: block;
   box-sizing: border-box;
-  
+
   left: 0;
   bottom: 0;
   top: calc(100% - 3rem);
