@@ -9,13 +9,22 @@
   --font-color-dark-mode: var(--rivulet-beige);
 
   --text-overhang: 1.5em;
+  
 }
 
 body {
   background-color: var(--rivulet-beige);
   color: var(--font-color-light-mode);
   font-family: var(--font-body);
-  margin-bottom: 2em;
+  margin: 0;
+
+  @media screen and (min-width: 800px) {
+    margin: 0 calc(50% - 400px);
+  }
+
+  @media screen and (min-width: 1400px) {
+    margin: 0 calc(50% - 600px);
+  }
 }
 
 body .dark-mode {
@@ -63,11 +72,11 @@ a:hover {
 a.header-link {
   text-decoration: none;
   display: inline-block;
-  align-self: right;
 }
 
 header {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   text-align: left;
@@ -79,6 +88,7 @@ header {
       height: auto;
       margin: 0 auto;
       display: inline-block;
+      aspect-ratio: 1 / 1;
     }
 
     img.logo.primary {
@@ -88,15 +98,29 @@ header {
     h1.title {
       display: inline-block;
       width: auto;
-      vertical-align: top;
-      margin-top: 0;
+      vertical-align: bottom;
+      margin: 0.75rem 0;
       padding-top: 0;
-      padding-left: 1em;
     }
+  }
+
+  .nav-button {
+    display: none;
+    background-color: var(--rivulet-beige);
+    border: 1px black ridge;
+    color: var(--font-color-light-mode);
+    height: 2rem;
+    width: auto;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    transform: translate3d(0, 0, 0);
+    /* Crucial for proper scroll behavior */
   }
 
   nav {
     max-width: 30%;
+    margin-top: 0.5rem;
 
     ul {
       list-style: none;
@@ -120,107 +144,201 @@ header {
       .shopping-cart {}
     }
   }
+
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+    align-items: center;
+
+    .branding {
+      text-align: center;
+      ;
+    }
+
+    .nav-button {
+      display: block;
+      margin: 0.5em auto;
+    }
+
+    nav {
+      display: none;
+    }
+  }
 }
 
-main div.page-heading {
-  display: flex;
-  padding: 1em;
-
-  img {
-    width: 10em;
-    border: 0.25em ridge var(--font-color-dark-mode);
-    margin: 0 1em;
-  }
-
-
-  div.values-list {
+main.home {
+  div.page-heading {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: row;
+
+    img {
+      width: 10em;
+      border: 0.25em ridge var(--font-color-dark-mode);
+      margin: 0 1em;
+    }
+
+    .welcome-text {
+      width: auto;
+      vertical-align: top;
+      padding-left: 0.5rem;
+      padding-right: 1rem;
+
+      .subtitle {
+        margin-top: 0;
+padding-top: 0;
+      }
+    }
+
+    @media screen and (max-width: 500px) {
+      flex-direction: column;
+    }
+
+
   }
 
-  div.values-list div,
-  div.category-list div {
-    border: 1px solid var(--berry-blossom);
-    padding: 0.5em;
-    margin: 0.5em;
-    background-color: var(--bark-brown);
-    color: var(--rivulet-beige);
+  div.categories {
+    width: 100%;
+    margin: 1em 0;
+    display: inline-flex;
+
+    a.gallery-link {
+      text-decoration: none;
+      color: var(--font-color-light-mode);
+      text-wrap: nowrap;
+      align-content: center;
+      margin: 0 1rem;
+      font-weight: bold;
+
+      ::after {
+        content: ":";
+      }
+    }
+
+    div.category-links div {
+      background-color: var(--olive-green);
+    }
+
+
+    @media screen and (max-width: 500px) {
+      display: revert;
+      margin: 0;
+
+      a.gallery-link {
+        margin: 0;
+      }
+    }
+
   }
 
-  div.category-list {
+
+  div.values-list,
+  div.category-links {
+    flex-wrap: nowrap;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
+    width: 100%;
 
+    div {
+      margin: 1em 0;
+      border: 1px solid var(--berry-blossom);
+      padding: 0.5em;
+      margin: 0.5em;
+      background-color: var(--bark-brown);
+      color: var(--rivulet-beige);
+
+    }
   }
 
-  div.category-list div {
-    background-color: var(--olive-green);
-  }
 
   div.specials {
     h3.subtitle {
       margin: 0.5em 0;
       color: var(--autumn-leaf);
     }
+
+    div.products-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      div.product {
+        border: 2px solid var(--olive-green);
+        padding: 0.25em;
+        margin: 0.25em;
+        background-color: var(--bark-brown);
+        color: var(--rivulet-beige);
+        position: relative;
+        width: 30%;
+        height: 6em;
+
+        img {
+          height: 50%;
+          width: auto;
+          float: right;
+        }
+
+        h3.product-title {
+          margin: 0 0.5em 0 0;
+        }
+
+        div.product-description {
+          margin: 0.5em 0;
+        }
+
+        div.product-price {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          font-weight: bold;
+          margin: 0 0 0 0.5em;
+        }
+      }
+
+      div.product.detail {
+        height: 19em;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+
+        div.product-price {
+          position: revert;
+          bottom: revert;
+          left: revert;
+          font-weight: bold;
+          margin: 0 0 0 0.5em;
+          float: right;
+          max-width: 50%;
+        }
+
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      div.products-list {
+        flex-direction: column;
+
+        div.product {
+          width: 100%;
+
+          img {
+            height: 50%;
+            width: auto;
+            float: left;
+            margin: 0.5rem;
+            margin-left: 0;
+          }
+        }
+
+
+      }
+    }
+
   }
-}
 
-div.products-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-
-  div.product {
-    border: 2px solid var(--olive-green);
-    padding: 0.25em;
-    margin: 0.25em;
-    background-color: var(--bark-brown);
-    color: var(--rivulet-beige);
-    position: relative;
-    width: 30%;
-    height: 6em;
-
-    img {
-      height: 50%;
-      width: auto;
-      float: right;
-    }
-
-    h3.product-title {
-      margin: 0 0.5em 0 0;
-    }
-
-    div.product-description {
-      margin: 0.5em 0;
-    }
-
-    div.product-price {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      font-weight: bold;
-      margin: 0 0 0 0.5em;
-    }
-  }
-
-  div.product.detail {
-    height: 19em;
-
-    img {
-      width: 100%;
-      height: auto;
-    }
-
-    div.product-price {
-      position: revert;
-      bottom: revert;
-      left: revert;
-      font-weight: bold;
-      margin: 0 0 0 0.5em;
-      float: right;
-      max-width: 50%;
+  @media screen and (max-width: 500px) {
+    img.storefront {
+      display: none;
     }
 
   }
@@ -371,15 +489,16 @@ main.policies {
 }
 
 footer {
-  display: block;
   position: fixed;
+  display: block;
+  box-sizing: border-box;
+  
   left: 0;
   bottom: 0;
+  top: calc(100% - 3rem);
   width: 100%;
   z-index: 100;
   align-items: center;
-  padding-bottom: 0.25em;
-  padding-top: 0.25em;
   background-color: var(--rivulet-beige);
 
   div.footer-content {
@@ -389,6 +508,7 @@ footer {
     div.social-media {
       width: auto;
       margin: 0 0.5em;
+      white-space: nowrap;
 
       a.icon {
         font-size: 1.25em;
@@ -404,9 +524,9 @@ footer {
     div.newsletter {}
 
     div.admin-links {
-      justify-content: end;
       width: auto;
       margin: 0 0.5em;
+      text-align: right;
 
       ul {
         display: inline-block;
@@ -419,6 +539,7 @@ footer {
           margin-right: 0.1em;
           list-style-type: none;
           font-size: small;
+          white-space: nowrap;
 
           a {
             margin: 0 1em;
@@ -434,5 +555,42 @@ footer {
       }
 
     }
+  }
+
+}
+
+
+@media screen and (max-width: 500px) {
+  body {
+    margin-bottom: 4.5rem;
+  }
+
+
+  footer {
+    position: fixed;
+    height: 4rem;
+    top: calc(100% - 4rem);
+
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    div.footer-content {
+      flex-direction: column;
+      align-items: center;
+
+      div.social-media {
+        display: inline-flex;
+        justify-content: space-around;
+        width: 100%;
+      }
+
+      div.admin-links {
+        position: fixed;
+        bottom: 0.25rem;
+        right: 0.1rem;
+      }
+    }
+
   }
 }

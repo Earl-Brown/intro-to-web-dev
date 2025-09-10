@@ -1,4 +1,4 @@
-<html >
+<html>
 
 <head>
   <meta charset="UTF-8" />
@@ -17,26 +17,26 @@
   <header>
     <div class="branding">
       <img class="logo primary" src="images/logo/autumn-leaf.png" alt="Bloom Valley Nursery Logo" class="logo">
-      <h1 class="title"
-        style="display: inline-block; vertical-align: top; margin-top: 0; padding-top: 0; padding-left: 1em;">Bloom
-        Valley Nursery</h1>
+      <h1 class="title">Bloom Valley Nursery</h1>
     </div>
-    <nav style="float:right">
-      <ul style="margin: 0; padding: 0; display: inline-block;">
+    <button class="nav-button"><i class="fa-solid fa-bars"></i></button>
+    <nav>
+      <ul>
         <li><a class="header-link" href="gallery.html">Products</a></li>
         <li><a class="header-link" href="about.html">About Us</a></li>
         <li><a class="header-link" href="news.html">News</a></li>
       </ul>
-      <div style="display: inline-block; padding: 0.5em; top: -2em; position: relative;">
+      <div class="shopping-cart-container">
         <a class="shopping-cart" href="#"><i class="fa-solid fa-cart-shopping fa-lg"></i></a>
       </div>
     </nav>
   </header>
-  <main>
+  
+  <main class="home">
     <div class="page-heading">
-      <img src="images/storefront.webp" />
-      <div style="width: calc(100% - 12em); vertical-align: top; padding-left: 1em; padding-right: 3em;">
-        <h2 class="subtitle" style="margin-top: 0; padding-top: 0;">Welcome to Bloom Valley Nursery!</h2>
+      <img class="storefront" src="images/storefront.webp" />
+      <div class="welcome-text">
+        <h2 class="subtitle">Welcome to Bloom Valley Nursery!</h2>
         <p class="body-large">Your local family-owned plant nursery, where we cultivate a
           passion for plants and gardening.</p>
 
@@ -57,17 +57,24 @@
         </p>
       </div>
     </div>
-    <div class="category-list">
-      <a href="gallery.html#Household-plants">
-        <div>Household Plants</div>
+    <div class="categories">
+      <a class="gallery-link" href="gallery.html">
+        <div>All Products</div>
       </a>
-      <a href="gallery.html#Outdoor-plants">
-        <div>Outdoor Plants</div>
-      </a>
-      <a href="gallery.html#Gardening-supplies">
-        <div>Gardening Supplies</div>
-      </a>
+
+      <div class="category-links">
+        <a href="gallery.html#Household-plants">
+          <div>Household Plants</div>
+        </a>
+        <a href="gallery.html#Outdoor-plants">
+          <div>Outdoor Plants</div>
+        </a>
+        <a href="gallery.html#Gardening-supplies">
+          <div>Gardening Supplies</div>
+        </a>
+      </div>
     </div>
+
     <div class="specials">
       <h3 class="subtitle">Specials this week!</h3>
 
@@ -96,7 +103,7 @@
           <div class="product-description">
             Premium mix for healthy plant growth.
           </div>
-          <div class="product-price">$12.99 - Buy one bag, get one bag free</div>
+          <div class="product-price">$12.99 (Buy one bag, get one free)</div>
         </div>
 
       </div>
