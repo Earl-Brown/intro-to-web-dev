@@ -1,4 +1,4 @@
-<html >
+<html>
 
 <head>
   <meta charset="UTF-8" />
@@ -6,7 +6,9 @@
   <meta name="acknowledgements"
     content="Some images are AI generated.  Some icons are sourced from Font Awesome and are used under the Font Awesome License." />
   <title>Bloom Valley Nursery - Welcome!</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles/styles.css" />
+  <link rel="stylesheet" href="styles/index.css" />
+
   <link href="/styles/css/fontawesome.min.css" rel="stylesheet" />
   <link href="/styles/css/solid.min.css" rel="stylesheet" />
   <link href="/styles/css/brands.min.css" rel="stylesheet" />
@@ -17,26 +19,26 @@
   <header>
     <div class="branding">
       <img class="logo primary" src="images/logo/autumn-leaf.png" alt="Bloom Valley Nursery Logo" class="logo">
-      <h1 class="title"
-        style="display: inline-block; vertical-align: top; margin-top: 0; padding-top: 0; padding-left: 1em;">Bloom
-        Valley Nursery</h1>
+      <h1 class="title">Bloom Valley Nursery</h1>
     </div>
-    <nav style="float:right">
-      <ul style="margin: 0; padding: 0; display: inline-block;">
+    <button class="nav-button"><i class="fa-solid fa-bars"></i></button>
+    <nav>
+      <ul>
         <li><a class="header-link" href="gallery.html">Products</a></li>
         <li><a class="header-link" href="about.html">About Us</a></li>
         <li><a class="header-link" href="news.html">News</a></li>
       </ul>
-      <div style="display: inline-block; padding: 0.5em; top: -2em; position: relative;">
+      <div class="shopping-cart-container">
         <a class="shopping-cart" href="#"><i class="fa-solid fa-cart-shopping fa-lg"></i></a>
       </div>
     </nav>
   </header>
-  <main>
+
+  <main class="home">
     <div class="page-heading">
-      <img src="images/storefront.webp" />
-      <div style="width: calc(100% - 12em); vertical-align: top; padding-left: 1em; padding-right: 3em;">
-        <h2 class="subtitle" style="margin-top: 0; padding-top: 0;">Welcome to Bloom Valley Nursery!</h2>
+      <img class="storefront" src="images/storefront.webp" />
+      <div class="welcome-text">
+        <h2 class="subtitle">Welcome to Bloom Valley Nursery!</h2>
         <p class="body-large">Your local family-owned plant nursery, where we cultivate a
           passion for plants and gardening.</p>
 
@@ -57,17 +59,24 @@
         </p>
       </div>
     </div>
-    <div class="category-list">
-      <a href="gallery.html#Household-plants">
-        <div>Household Plants</div>
+    <div class="categories">
+      <a class="gallery-link" href="gallery.html">
+        <div>All Products</div>
       </a>
-      <a href="gallery.html#Outdoor-plants">
-        <div>Outdoor Plants</div>
-      </a>
-      <a href="gallery.html#Gardening-supplies">
-        <div>Gardening Supplies</div>
-      </a>
+
+      <div class="category-links">
+        <a href="gallery.html#Household-plants">
+          <div>Household Plants</div>
+        </a>
+        <a href="gallery.html#Outdoor-plants">
+          <div>Outdoor Plants</div>
+        </a>
+        <a href="gallery.html#Gardening-supplies">
+          <div>Gardening Supplies</div>
+        </a>
+      </div>
     </div>
+
     <div class="specials">
       <h3 class="subtitle">Specials this week!</h3>
 
@@ -96,7 +105,7 @@
           <div class="product-description">
             Premium mix for healthy plant growth.
           </div>
-          <div class="product-price">$12.99 - Buy one bag, get one bag free</div>
+          <div class="product-price">$12.99 (Buy one bag, get one free)</div>
         </div>
 
       </div>
@@ -105,18 +114,19 @@
   </main>
   <footer>
     <div class="footer-content">
-      <div class="footer-section social-media">
+      <div class="social-media">
         <a href="#" class="icon"><i class="fa-brands fa-facebook"></i></a>
         <a href="#" class="icon"><i class="fa-brands fa-x-twitter"></i></a>
         <a href="#" class="icon"><i class="fa-brands fa-youtube"></i></a>
         <a href="#" class="icon"><i class="fa-brands fa-instagram"></i></a>
       </div>
-      <div class="footer-section newsletter">
+      <div class="newsletter">
         <label for="newsletter-email">Subscribe to our newsletter:</label>
         <input type="email" id="newsletter-email" placeholder="Enter your email" />
+        <br class="mobile-break" />
         <input type="submit" value="Subscribe" />
       </div>
-      <div class="footer-section admin-links">
+      <div class="admin-links">
         <ul>
           <li><a href="about.html">contact us</a></li>
           <li><a href="legal.html">fine print</a></li>
