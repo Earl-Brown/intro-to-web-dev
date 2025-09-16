@@ -1,0 +1,92 @@
+header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: left;
+
+
+  a.header-link {
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .branding {
+    img.logo {
+      width: 4rem;
+      height: auto;
+      margin: 0 auto;
+      display: inline-block;
+      aspect-ratio: 1 / 1;
+    }
+
+    img.logo.primary {
+      margin: 0.5em 1em;
+    }
+
+    h1.title {
+      display: inline-block;
+      width: auto;
+      vertical-align: bottom;
+      margin: 0.75rem 0;
+      padding-top: 0;
+    }
+  }
+
+  .nav-button {
+    position: absolute;
+    display: none;
+    background-color: var(--rivulet-beige);
+    border: 1px black ridge;
+    color: var(--font-color-light-mode);
+    min-height: 2rem;
+    min-width: 2em;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+
+  nav {
+    max-width: 30%;
+    margin-top: 0.5rem;
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+    }
+
+    ul li {
+      display: block;
+      margin-right: 1em;
+      list-style-type: none;
+    }
+
+    .shopping-cart-container {
+      display: inline-block;
+      padding: 0.5em;
+      top: -2em;
+      position: relative;
+    }
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+
+    .branding {
+      text-align: center;
+    }
+
+    .nav-button {
+      display: block;
+    }
+
+    nav {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,72 @@
+:root {
+  --berry-blossom: #790D1D;
+  --autumn-leaf: #9D352E;
+  --olive-green: #4B4A1E;
+  --bark-brown: #79512E;
+  --rivulet-beige: #E0D2BD;
+
+  --font-color-light-mode: var(--olive-green);
+  --font-color-dark-mode: var(--rivulet-beige);
+
+  --text-overhang: 1.5em;
+
+}
+
+
+body {
+  background-color: var(--rivulet-beige);
+  color: var(--font-color-light-mode);
+  font-family: var(--font-body);
+  margin: 0;
+
+  @media screen and (min-width: 1000px) {
+    margin: 0 100px;
+  }
+
+  @media screen and (min-width: 1400px) {
+    margin: 0 300px;
+  }
+}
+
+body .dark-mode {
+  background-color: var(--bark-brown);
+  color: var(--font-color-dark-mode);
+}
+
+a:link {
+  color: var(--font-color-light-mode)
+}
+
+a:hover {
+  color: var(--bark-brown)
+}
+
+.title {
+  font: arial bold 30px;
+}
+
+.heading {
+  font: arial bold 25px;
+}
+
+.subtitle {
+  font: comfortaa normal 15px;
+}
+
+.body-text {
+  font: calibre normal 16px;
+}
+
+.body-text .large {
+  font-size: 20px;
+}
+
+.body-text .strong {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.caption {
+  font: arial bold 12px;
+}
+

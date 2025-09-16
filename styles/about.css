@@ -1,0 +1,66 @@
+main.about {
+  div.about-section {
+    div {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 1em;
+    }
+  }
+
+  div.business-details {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    ;
+    flex-wrap: wrap;
+
+    div {
+      table.operating-hours {
+        tbody {
+          tr {
+            th {
+              text-align: left;
+              ;
+            }
+          }
+        }
+      }
+
+      div.map-view {
+        img.map {
+          width: 14em;
+          height: auto;
+        }
+      }
+    }
+
+    div.contact-form {
+      form.contact-form {
+        div {
+          label {
+            display: block;
+          }
+        }
+
+        div.form-buttons {
+          margin-top: 0.5em;
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+
+
+    }
+
+    div.store-view {
+      img {
+        height: 30em;
+        width: auto;
+      }
+
+    }
+  }
+
+}
+
