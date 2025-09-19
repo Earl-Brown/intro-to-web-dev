@@ -9,10 +9,14 @@
   <link rel="stylesheet" href="styles/styles.css" />
   <link rel="stylesheet" href="styles/gallery.css" />
   <link rel="stylesheet" href="styles/product-list.css" />
-  
+
   <link href="styles/css/fontawesome.min.css" rel="stylesheet" />
   <link href="styles/css/solid.min.css" rel="stylesheet" />
   <link href="styles/css/brands.min.css" rel="stylesheet" />
+
+  <script src="scripts/util.js" defer></script>
+  <script src="scripts/newsletter.js" defer></script>
+
 
 </head>
 
@@ -34,7 +38,7 @@
       </div>
     </nav>
   </header>
-  
+
   <main>
     <div class="product-list gallery">
       <a id="Household-plants"></a>
@@ -47,7 +51,11 @@
             Aloe (Aloe vera) is a succulent known for its gel-filled leaves, traditionally used for soothing burns and
             skin irritations. It's a resilient, easy-to-care-for plant with striking green leaves.
           </div>
-          <div class="product-price">$19.99 (10% off)</div>
+          <div class="cost">
+            <div class="price">19.99</div>
+            <div class="discount">(10% off)</div>
+          </div>
+          <button class="add-to-cart" value='{"product": "Potted Aloe", "price": 19.99}'>Add to cart</button>
         </div>
 
         <div class="product detail">
@@ -57,7 +65,11 @@
             The spider plant is a low-maintenance, trailing houseplant known for its hanging “spiderettes.” It is a
             great choice for beginners!
           </div>
-          <div class="product-price">$25.98</div>
+          <div class="cost">
+            <div class="price">25.98</div>
+            <div class="discount"></div>
+          </div>
+          <button class="add-to-cart" value='{"product": "Potted Aloe", "price": 25.98}'>Add to cart</button>
         </div>
 
         <div class="product detail">
@@ -67,7 +79,11 @@
             The String-of-Pearls (Senecio rowleyanus) is a charming, trailing succulent with tiny, bead-like leaves -
             hence the name! It's a beautiful and easy-to-care-for plant.
           </div>
-          <div class="product-price">$30.95</div>
+          <div class="cost">
+            <div class="price">30.95</div>
+            <div class="discount"></div>
+          </div>
+          <button class="add-to-cart">Add to cart</button>
         </div>
 
       </div>
@@ -84,7 +100,11 @@
             The apple tree (Malus domestica) is a deciduous fruit tree prized for its delicious apples! It's known for
             its beautiful blossoms in the spring and bountiful fruit harvest in the fall.
           </div>
-          <div class="product-price">$75.98</div>
+          <div class="cost">
+            <div class="price">75.98</div>
+            <div class="discount"></div>
+          </div>
+          <button class="add-to-cart">Add to cart</button>
         </div>
 
         <div class="product detail">
@@ -94,7 +114,11 @@
             The Birch tree (Betula species) is a majestic deciduous tree known for its distinctive, papery bark - often
             white or silver - and graceful, weeping branches. It's a symbol of resilience and beauty.
           </div>
-          <div class="product-price">$70.00</div>
+          <div class="cost">
+            <div class="price">70.00</div>
+            <div class="discount"></div>
+          </div>
+          <button class="add-to-cart">Add to cart</button>
         </div>
 
         <div class="product detail">
@@ -105,7 +129,11 @@
             of red, orange, and yellow. It's a classic choice for landscapes and admired for its beautiful leaves and
             distinctive shape.
           </div>
-          <div class="product-price">$65.99 (half price!)</div>
+          <div class="cost">
+            <div class="price">65.99</div>
+            <div class="discount">(half price)</div>
+          </div>
+          <button class="add-to-cart">Add to cart</button>
         </div>
       </div>
     </div>
@@ -121,7 +149,11 @@
             Cute miniature birdhouse - perfect for adding a touch of whimsy to your garden! We have multiple colors and
             styles.
           </div>
-          <div class="product-price">$29.99</div>
+          <div class="cost">
+            <div class="price">29.99</div>
+            <div class="discount"></div>
+          </div>
+          <button class="add-to-cart">Add to cart</button>
         </div>
 
         <div class="product detail">
@@ -131,7 +163,11 @@
             Premium potting soil - formulated with peat moss, perlite, and vermiculite for excellent drainage and
             nutrient retention.
           </div>
-          <div class="product-price">$12.99 - Buy one bag, get one bag free</div>
+          <div class="cost">
+            <div class="price">12.99</div>
+            <div class="discount">- Buy one bag, get one bag free</div>
+          </div>
+          <button class="add-to-cart">Add to cart</button>
         </div>
 
         <div class="product detail">
@@ -141,7 +177,11 @@
             Add a touch of charm to your garden with this delightful watering can. Available in a wide range of sizes,
             it's the perfect addition for delicate watering and a charming decorative touch
           </div>
-          <div class="product-price">$14.99</div>
+          <div class="cost">
+            <div class="price">14.99</div>
+            <div class="discount"></div>
+          </div>
+          <button class="add-to-cart">Add to cart</button>
         </div>
 
       </div>
@@ -159,8 +199,10 @@
       </div>
       <div class="footer-section newsletter">
         <label for="newsletter-email">Subscribe to our newsletter:</label>
-        <input type="email" id="newsletter-email" placeholder="Enter your email" />
-        <input type="submit" value="Subscribe" />
+        <input type="email" id="newsletter-email" placeholder="Enter your email"
+          aria-label="Text input for email address subscription"
+          onkeypress="if(event.key === 'Enter') registerForNewsletter(getInputText('newsletter-email'))" />
+        <input type="submit" value="Subscribe" onclick="registerForNewsletter(getInputText('newsletter-email'))" />
       </div>
       <div class="footer-section admin-links">
         <ul>
@@ -171,4 +213,24 @@
     </div>
   </footer>
 
+
+
 </body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script type="text/javascript" src="scripts/shopping-cart.js"></script>
+<script type="text/javascript" defer>
+  const a2cButtons = $("button.add-to-cart");
+  console.log("buttons", a2cButtons)
+  a2cButtons.on("click", (event) => {
+    const buttonNode = event.currentTarget;
+    const parent = $(buttonNode).parent()
+    const title = parent.children(".product-title").text()
+    const priceBlock = parent.children(".cost")
+    const price = priceBlock.children(".price").text()
+    addToCart({ product: title, price: Number(price) })
+
+  })
+</script>
+
+</html>
